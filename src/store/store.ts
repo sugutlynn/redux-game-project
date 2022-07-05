@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit"
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import gameReducer from "../features/games/gameSlice";
+import postsReducer from "../features/posts/postsSlice";
 
 export const store = configureStore({
     reducer: {
-        games: gameReducer
+        posts: postsReducer
     }
 
 })
