@@ -1,8 +1,8 @@
-export interface Game {
+export interface Post {
     _id?: string;
     userId: number;
     id: number;
     title: string;
-    body: string;
+    content: string;
 
 }

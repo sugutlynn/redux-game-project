@@ -1,29 +1,30 @@
-import React, { useCallback, useEffect } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import GamesPage from "./features/games/GamesPage";
-import { getGames } from "./features/games/gameSlice";
-import { useAppDispatch } from "./store/store";
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+} from 'react-router-dom'
+
+
+import  PostsList  from './features/posts/PostsList'
+import AddPostForm  from './features/posts/AddPostForm'
+
 
 function App() {
-  const dispatch = useAppDispatch();
-
-  const initApp = useCallback(async () => {
-    await dispatch(getGames());
-  }, [dispatch]);
-
-  useEffect(() => {
-    initApp();
-  }, []);
-
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<GamesPage />} />
-      </Routes>
-    </BrowserRouter>
-  );
+    <Router>
+      <div className="App">
+          
+              <React.Fragment>
+                <AddPostForm />
+                <PostsList />
+              </React.Fragment>
+          
+        
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
+
+
